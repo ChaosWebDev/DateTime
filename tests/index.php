@@ -3,13 +3,14 @@ require_once __DIR__ . "/../vendor/autoload.php";
 $now = now();
 
 $values = [
-    $now,
+    $now->format(),
     epoch(),
     $now->format('m/d/Y H:i'),
-    $now->adjSec(1000),
+    $now->adjSec(1000)->format(),
 
     $two = $now->copy()->adjDay(1),
-    $two->adjHour(1),
+    $two->format(),
+    $two->adjHour(1)->format(),
 ];
 ?>
 
